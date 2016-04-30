@@ -9,8 +9,7 @@ class LinkedList:
         self.N = 0
 
     def slice(self, start, stop):
-        """ return a copy of the list starting at start position
-        and going upto but not including stop position """
+       
         if (start < 1) or (start > stop) or (stop > self.N + 1):
             print ("Invalid range.")
             return None
@@ -35,10 +34,7 @@ class LinkedList:
         return front
 
     def pop(self, i=-1):
-        """ Remove the item at the given position in the linked list,
-        and return it.
-        If no index is specified, a.pop() removes and returns the last item
-        in the linked list."""
+   
         if self.isEmpty():
             return None
         if i >= self.size():
@@ -72,7 +68,7 @@ class LinkedList:
         return None
 
     def insert(self, data, index):
-        """ insert data at given index in the linked list"""
+
         if not isinstance(index, int):
             print ("Index should be of type Integer, str() passed")
             return False
@@ -109,9 +105,7 @@ class LinkedList:
         return True
 
     def index(self, x):
-        """ return the index in the linked list of the first item
-        whose value is x.
-        Returns "None" if no such item in linked list """
+        
         curr = self.head
         index = 0
         while curr is not None:
@@ -122,9 +116,8 @@ class LinkedList:
         return None
 
     def append(self, data):
-        """ add the data at the end of the linked list """
+  
         node = Node(data)
-        # If first node in the list then both head n tail should point to it
         if self.isEmpty():
             self.head = node
             self.tail = self.head
@@ -134,7 +127,6 @@ class LinkedList:
         self.N += 1
 
     def search(self, key):
-        """search for key and if found return the index. return -1 otherwise"""
         curr = self.head
         index = 0
         found = False
